@@ -8,7 +8,7 @@
 
 #import "Employee.h"
 
-static NSUInteger const kStartingSalary = 10000;
+static NSUInteger const kStartingSalary = 3700;
 NSString* const kSalaryCurrency = @"EUR";
 
 @implementation Employee
@@ -23,6 +23,21 @@ NSString* const kSalaryCurrency = @"EUR";
         _salary = [[NSDecimalNumber alloc] initWithUnsignedInteger:kStartingSalary];
     }
     return self;
+}
+
+- (NSString *) formattedSalary{
+    return [self formattedSalary:self.salary withCurrencyCode:kSalaryCurrency withLocale:[NSLocale currentLocale]];
+}
+
+- (NSString *) formattedSalary:(NSDecimalNumber *) salary withCurrencyCode:(NSString *)currencyCode withLocale:(NSLocale *)locale{
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];// set the format of number
+    [formatter setCurrencyCode:currencyCode];// set the currency code
+    [formatter setLocale:locale];// set the locale of both currency code asnd sallary
+    NSString *localizedMoneyString = [formatter stringFromNumber:salary];
+    
+    return localizedMoneyString;
 }
 
 @end

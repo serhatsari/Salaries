@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "Employee.h"
 
 @interface SalariesTests : XCTestCase
 
@@ -34,6 +35,35 @@
     [self measureBlock:^{
         // Put the code you want to measure the time of here.
     }];
+}
+
+- (void)testFormattedSalary{
+    
+    Employee *employee = [[Employee alloc] initWithName:@"name" birthYear:1985];
+    
+    XCTAssertTrue([[employee formattedSalary:[[NSDecimalNumber alloc] initWithUnsignedInteger:3700]
+                             withCurrencyCode:@"EUR"
+                             withLocale:[NSLocale localeWithLocaleIdentifier:@"en-US"]] isEqualToString:@"€3,700.00"]);
+    
+    XCTAssertTrue([[employee formattedSalary:[[NSDecimalNumber alloc] initWithUnsignedInteger:3700]
+                            withCurrencyCode:@"EUR"
+                                  withLocale:[NSLocale localeWithLocaleIdentifier:@"en-US"]] isEqualToString:@"€3,700.00"]);
+    
+    XCTAssertTrue([[employee formattedSalary:[[NSDecimalNumber alloc] initWithUnsignedInteger:10000]
+                            withCurrencyCode:@"EUR"
+                                  withLocale:[NSLocale localeWithLocaleIdentifier:@"en-US"]] isEqualToString:@"€10,000.00"]);
+    
+    XCTAssertTrue([[employee formattedSalary:[[NSDecimalNumber alloc] initWithUnsignedInteger:123456789]
+                            withCurrencyCode:@"EUR"
+                                  withLocale:[NSLocale localeWithLocaleIdentifier:@"en-US"]] isEqualToString:@"€123,456,789.00"]);
+    
+    XCTAssertTrue([[employee formattedSalary:[[NSDecimalNumber alloc] initWithUnsignedInteger:42390]
+                            withCurrencyCode:@"TRY"
+                                  withLocale:[NSLocale localeWithLocaleIdentifier:@"tr_TR"]] isEqualToString:@"₺42.390,00"]);
+    
+    XCTAssertTrue([[employee formattedSalary:[[NSDecimalNumber alloc] initWithUnsignedInteger:42390]
+                            withCurrencyCode:@"GBP"
+                                  withLocale:[NSLocale localeWithLocaleIdentifier:@"en-US"]] isEqualToString:@"£42,390.00"]);
 }
 
 @end
