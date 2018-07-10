@@ -11,10 +11,11 @@
 		58AFEAC220F490EF00466896 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFEAC120F490EF00466896 /* ViewController.m */; };
 		58AFEAC820F490EF00466896 /* Salaries.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58AFEAC620F490EF00466896 /* Salaries.xcdatamodeld */; };
 		58AFEACA20F490F200466896 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58AFEAC920F490F200466896 /* Assets.xcassets */; };
-		58AFEACD20F490F200466896 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58AFEACB20F490F200466896 /* LaunchScreen.storyboard */; };
 		58AFEAD020F490F200466896 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFEACF20F490F200466896 /* main.m */; };
 		58AFEADA20F490F200466896 /* SalariesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFEAD920F490F200466896 /* SalariesTests.m */; };
 		58AFEAE520F490F200466896 /* SalariesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFEAE420F490F200466896 /* SalariesUITests.m */; };
+		58AFEAF720F494E100466896 /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFEAF620F494E100466896 /* Employee.m */; };
+		58AFEAFB20F4953900466896 /* EmployeeDirectory.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFEAFA20F4953900466896 /* EmployeeDirectory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +43,6 @@
 		58AFEAC120F490EF00466896 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		58AFEAC720F490EF00466896 /* Salaries.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Salaries.xcdatamodel; sourceTree = "<group>"; };
 		58AFEAC920F490F200466896 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		58AFEACC20F490F200466896 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58AFEACE20F490F200466896 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58AFEACF20F490F200466896 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		58AFEAD520F490F200466896 /* SalariesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalariesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +51,10 @@
 		58AFEAE020F490F200466896 /* SalariesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalariesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58AFEAE420F490F200466896 /* SalariesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SalariesUITests.m; sourceTree = "<group>"; };
 		58AFEAE620F490F200466896 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58AFEAF520F494E100466896 /* Employee.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Employee.h; sourceTree = "<group>"; };
+		58AFEAF620F494E100466896 /* Employee.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Employee.m; sourceTree = "<group>"; };
+		58AFEAF920F4953900466896 /* EmployeeDirectory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmployeeDirectory.h; sourceTree = "<group>"; };
+		58AFEAFA20F4953900466896 /* EmployeeDirectory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmployeeDirectory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,15 +105,13 @@
 		58AFEABC20F490EF00466896 /* Salaries */ = {
 			isa = PBXGroup;
 			children = (
+				58AFEAF820F4952500466896 /* Managers */,
+				58AFEAF420F4945D00466896 /* Views */,
+				58AFEAF320F4944C00466896 /* Resources */,
+				58AFEAF220F4942400466896 /* Models */,
 				58AFEABD20F490EF00466896 /* AppDelegate.h */,
 				58AFEABE20F490EF00466896 /* AppDelegate.m */,
-				58AFEAC020F490EF00466896 /* ViewController.h */,
-				58AFEAC120F490EF00466896 /* ViewController.m */,
-				58AFEAC920F490F200466896 /* Assets.xcassets */,
-				58AFEACB20F490F200466896 /* LaunchScreen.storyboard */,
 				58AFEACE20F490F200466896 /* Info.plist */,
-				58AFEACF20F490F200466896 /* main.m */,
-				58AFEAC620F490EF00466896 /* Salaries.xcdatamodeld */,
 			);
 			path = Salaries;
 			sourceTree = "<group>";
@@ -130,6 +132,43 @@
 				58AFEAE620F490F200466896 /* Info.plist */,
 			);
 			path = SalariesUITests;
+			sourceTree = "<group>";
+		};
+		58AFEAF220F4942400466896 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				58AFEAF520F494E100466896 /* Employee.h */,
+				58AFEAF620F494E100466896 /* Employee.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		58AFEAF320F4944C00466896 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				58AFEAC920F490F200466896 /* Assets.xcassets */,
+				58AFEACF20F490F200466896 /* main.m */,
+				58AFEAC620F490EF00466896 /* Salaries.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		58AFEAF420F4945D00466896 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				58AFEAC020F490EF00466896 /* ViewController.h */,
+				58AFEAC120F490EF00466896 /* ViewController.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		58AFEAF820F4952500466896 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				58AFEAF920F4953900466896 /* EmployeeDirectory.h */,
+				58AFEAFA20F4953900466896 /* EmployeeDirectory.m */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,7 +274,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58AFEACD20F490F200466896 /* LaunchScreen.storyboard in Resources */,
 				58AFEACA20F490F200466896 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,10 +299,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58AFEAF720F494E100466896 /* Employee.m in Sources */,
 				58AFEAC220F490EF00466896 /* ViewController.m in Sources */,
 				58AFEABF20F490EF00466896 /* AppDelegate.m in Sources */,
 				58AFEAD020F490F200466896 /* main.m in Sources */,
 				58AFEAC820F490EF00466896 /* Salaries.xcdatamodeld in Sources */,
+				58AFEAFB20F4953900466896 /* EmployeeDirectory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,17 +338,6 @@
 			targetProxy = 58AFEAE120F490F200466896 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		58AFEACB20F490F200466896 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				58AFEACC20F490F200466896 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		58AFEAE720F490F200466896 /* Debug */ = {
