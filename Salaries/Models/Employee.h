@@ -13,6 +13,7 @@
 @property (readonly, copy) NSString* name;
 @property (readonly) NSUInteger birthYear;
 @property (readonly, copy) NSDecimalNumber* salary;
+@property (readonly, copy) NSString* salaryString; // to solve the performance bottleneck
 
 - (instancetype)initWithName:(NSString*)name birthYear:(NSUInteger)birthYear;
 

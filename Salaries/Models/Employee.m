@@ -21,6 +21,7 @@ NSString* const kSalaryCurrency = @"EUR";
         _name = name;
         _birthYear = birthYear;
         _salary = [[NSDecimalNumber alloc] initWithUnsignedInteger:kStartingSalary];
+        _salaryString = [self formattedSalary];
     }
     return self;
 }

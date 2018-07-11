@@ -17,6 +17,7 @@
 		58AFEAE520F490F200466896 /* SalariesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFEAE420F490F200466896 /* SalariesUITests.m */; };
 		58AFEAF720F494E100466896 /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFEAF620F494E100466896 /* Employee.m */; };
 		58AFEAFB20F4953900466896 /* EmployeeDirectory.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFEAFA20F4953900466896 /* EmployeeDirectory.m */; };
+		58B6B51D20F69E0B00DB91AC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 58B6B51C20F69E0B00DB91AC /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		58AFEAF620F494E100466896 /* Employee.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Employee.m; sourceTree = "<group>"; };
 		58AFEAF920F4953900466896 /* EmployeeDirectory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmployeeDirectory.h; sourceTree = "<group>"; };
 		58AFEAFA20F4953900466896 /* EmployeeDirectory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmployeeDirectory.m; sourceTree = "<group>"; };
+		58B6B51C20F69E0B00DB91AC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				58AFEABD20F490EF00466896 /* AppDelegate.h */,
 				58AFEABE20F490EF00466896 /* AppDelegate.m */,
 				58AFEACE20F490F200466896 /* Info.plist */,
+				58B6B51C20F69E0B00DB91AC /* README.md */,
 			);
 			path = Salaries;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58B6B51D20F69E0B00DB91AC /* README.md in Resources */,
 				58AFEACA20F490F200466896 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

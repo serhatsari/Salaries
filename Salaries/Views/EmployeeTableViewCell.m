@@ -65,6 +65,13 @@
 - (void) reloadCellWithEmployee:(Employee *)employee {
     self.labelName.text = employee.name;
     self.labelBirthYear.text = [NSString stringWithFormat:@"%i\n%@", (int)employee.birthYear, [employee formattedSalary]];
+    
+    /*
+     * Calling [employee formattedSalary] is the performance bottleneck in this code.
+     * Creating a property called _salarString and calling the formattedSalary functin on init method on Employee class is a good way to solve this bottleneck.
+     * Then call that property here;
+     * self.labelBirthYear.text = [NSString stringWithFormat:@"%i\n%@", (int)employee.birthYear, employee.salaryString];
+     */
 }
 
 @end
