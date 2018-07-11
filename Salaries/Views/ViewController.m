@@ -9,8 +9,9 @@
 #import "ViewController.h"
 #import "EmployeeDirectory.h"
 #import "Employee.h"
+#import "EmployeeTableViewCell.h"
 
-@interface ViewController () <UITableViewDataSource>
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) EmployeeDirectory *employeeDirectory;
@@ -30,7 +31,7 @@
     [super viewDidLoad];
     
     // style your view
-    self.view.backgroundColor = [UIColor yellowColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     // set navigation items
     self.navigationItem.title = @"Employees";
@@ -69,11 +70,25 @@
                                                   object:nil];
 }
 
+- (void)viewSafeAreaInsetsDidChange {
+    [super viewSafeAreaInsetsDidChange];
+    
+    self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
+    UILayoutGuide * guide = self.view.safeAreaLayoutGuide;
+    [self.tableView.leadingAnchor constraintEqualToAnchor:guide.leadingAnchor].active = YES;
+    [self.tableView.trailingAnchor constraintEqualToAnchor:guide.trailingAnchor].active = YES;
+    [self.tableView.topAnchor constraintEqualToAnchor:guide.topAnchor].active = YES;
+    [self.tableView.bottomAnchor constraintEqualToAnchor:guide.bottomAnchor].active = YES;
+}
+
 /* create basic uitableview */
 - (UITableView *)createTableView {
     UITableView *tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
     tableView.dataSource = self;
+    tableView.delegate = self;
     tableView.allowsSelection = NO;
+    tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    
     return tableView;
 }
 
@@ -123,16 +138,19 @@
 {
     static NSString *cellIdentifier = @"Cell";
     
-    UITableViewCell *cell = (UITableViewCell *)[theTableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    EmployeeTableViewCell *cell = (EmployeeTableViewCell *)[theTableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+        cell = [[EmployeeTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
     
     Employee *employee = (Employee *)[self.employeeDirectory.employees objectAtIndex:indexPath.row];
-    cell.textLabel.text = employee.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%i - %@", (int)employee.birthYear, employee.formattedSalary];
+    [cell reloadCellWithEmployee:employee];
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 50.0F;
 }
 
 @end

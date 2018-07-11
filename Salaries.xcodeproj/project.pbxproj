@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58285F1020F6188800C542A8 /* EmployeeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58285F0F20F6188800C542A8 /* EmployeeTableViewCell.m */; };
 		58AFEABF20F490EF00466896 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFEABE20F490EF00466896 /* AppDelegate.m */; };
 		58AFEAC220F490EF00466896 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AFEAC120F490EF00466896 /* ViewController.m */; };
 		58AFEAC820F490EF00466896 /* Salaries.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58AFEAC620F490EF00466896 /* Salaries.xcdatamodeld */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		58285F0E20F6188800C542A8 /* EmployeeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmployeeTableViewCell.h; sourceTree = "<group>"; };
+		58285F0F20F6188800C542A8 /* EmployeeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmployeeTableViewCell.m; sourceTree = "<group>"; };
 		58AFEABA20F490EF00466896 /* Salaries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Salaries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58AFEABD20F490EF00466896 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		58AFEABE20F490EF00466896 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -158,6 +161,8 @@
 			children = (
 				58AFEAC020F490EF00466896 /* ViewController.h */,
 				58AFEAC120F490EF00466896 /* ViewController.m */,
+				58285F0E20F6188800C542A8 /* EmployeeTableViewCell.h */,
+				58285F0F20F6188800C542A8 /* EmployeeTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -304,6 +309,7 @@
 				58AFEABF20F490EF00466896 /* AppDelegate.m in Sources */,
 				58AFEAD020F490F200466896 /* main.m in Sources */,
 				58AFEAC820F490EF00466896 /* Salaries.xcdatamodeld in Sources */,
+				58285F1020F6188800C542A8 /* EmployeeTableViewCell.m in Sources */,
 				58AFEAFB20F4953900466896 /* EmployeeDirectory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
