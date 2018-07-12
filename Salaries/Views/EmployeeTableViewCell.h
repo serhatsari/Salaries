@@ -11,6 +11,6 @@
 
 @interface EmployeeTableViewCell : UITableViewCell
 
-- (void) reloadCellWithEmployee:(Employee *)employee;
+- (void)reloadCellWithEmployee:(Employee *)employee;
 
 @end

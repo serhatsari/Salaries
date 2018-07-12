@@ -66,4 +66,22 @@
                                   withLocale:[NSLocale localeWithLocaleIdentifier:@"en-US"]] isEqualToString:@"£42,390.00"]);
 }
 
+- (void)testCompareEmployee{
+    Employee *e1 = [[Employee alloc] initWithName:@"abc" birthYear:1900];
+    Employee *e2 = [[Employee alloc] initWithName:@"def" birthYear:1900];
+    Employee *e3 = [[Employee alloc] initWithName:@"ghi klm" birthYear:1900];
+    Employee *e4 = [[Employee alloc] initWithName:@"ghi asd" birthYear:1900];
+    Employee *e5 = [[Employee alloc] initWithName:@"adf" birthYear:1900];
+    Employee *e6 = [[Employee alloc] initWithName:@"def" birthYear:1900];
+    
+    XCTAssertTrue([e1 compare:e2] == NSOrderedAscending);
+    XCTAssertTrue([e2 compare:e1] == NSOrderedDescending);
+    XCTAssertTrue([e3 compare:e4] == NSOrderedDescending);
+    XCTAssertTrue([e2 compare:e4] == NSOrderedAscending);
+    XCTAssertTrue([e2 compare:e6] == NSOrderedSame);
+    XCTAssertTrue([e5 compare:e2] == NSOrderedAscending);
+    XCTAssertTrue([e2 compare:e3] == NSOrderedAscending);
+    XCTAssertTrue([e3 compare:e2] == NSOrderedDescending);
+}
+
 @end

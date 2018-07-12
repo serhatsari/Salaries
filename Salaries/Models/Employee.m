@@ -26,11 +26,11 @@ NSString* const kSalaryCurrency = @"EUR";
     return self;
 }
 
-- (NSString *) formattedSalary{
+- (NSString *)formattedSalary{
     return [self formattedSalary:self.salary withCurrencyCode:kSalaryCurrency withLocale:[NSLocale currentLocale]];
 }
 
-- (NSString *) formattedSalary:(NSDecimalNumber *) salary withCurrencyCode:(NSString *)currencyCode withLocale:(NSLocale *)locale{
+- (NSString *)formattedSalary:(NSDecimalNumber *) salary withCurrencyCode:(NSString *)currencyCode withLocale:(NSLocale *)locale{
     
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];// set the format of number
@@ -39,6 +39,10 @@ NSString* const kSalaryCurrency = @"EUR";
     NSString *localizedMoneyString = [formatter stringFromNumber:salary];
     
     return localizedMoneyString;
+}
+
+- (NSComparisonResult)compare:(Employee *)employee { 
+    return [self.name compare:employee.name];
 }
 
 @end

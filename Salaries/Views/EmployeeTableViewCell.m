@@ -62,7 +62,7 @@
     return self;
 }
 
-- (void) reloadCellWithEmployee:(Employee *)employee {
+- (void)reloadCellWithEmployee:(Employee *)employee {
     self.labelName.text = employee.name;
     self.labelBirthYear.text = [NSString stringWithFormat:@"%i\n%@", (int)employee.birthYear, [employee formattedSalary]];
     

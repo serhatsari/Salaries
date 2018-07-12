@@ -43,7 +43,7 @@
 
 }
 
-- (void) viewDidAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
     // add observer
@@ -61,7 +61,7 @@
     
 }
 
-- (void) viewDidDisappear:(BOOL)animated {
+- (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
     // remove observer
@@ -94,11 +94,11 @@
 
 #pragma mark - Actions
      
-- (void) employeesUpdated:(NSNotification *) notification {
+- (void)employeesUpdated:(NSNotification *) notification {
     [self.tableView reloadData];
 }
 
-- (void) showActions:(id)sender {
+- (void)showActions:(id)sender {
     UIAlertController *alertController=   [UIAlertController
                                            alertControllerWithTitle:nil
                                            message:nil
@@ -114,6 +114,9 @@
                                                            handler:^(UIAlertAction * _Nonnull action) {
                                                                [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
                                                                    ////order employees
+                                                                   [self.employeeDirectory sortEmployeesByNameWithHandlerBlock:^{
+                                                                       [self.tableView reloadData];
+                                                                   }];
                                                                }];
                                                            }];
     

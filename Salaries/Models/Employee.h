@@ -20,7 +20,7 @@
 /**
  * returns the Salary in a currency formatted with currency symbol like €3,700.00
  */
-- (NSString *) formattedSalary;
+- (NSString *)formattedSalary;
 
 /**
  * returns the Salary in a currency formatted with currency symbol like €3,700.00
@@ -28,6 +28,11 @@
  * currencyCode: Global Currency Codes in String Format. (ex: EUR, TRY, AED)
  * locale: NSLocal which want to see the salary.
  */
-- (NSString *) formattedSalary:(NSDecimalNumber *) salary withCurrencyCode:(NSString *)currencyCode withLocale:(NSLocale *)locale;
+- (NSString *)formattedSalary:(NSDecimalNumber *) salary withCurrencyCode:(NSString *)currencyCode withLocale:(NSLocale *)locale;
+
+/**
+ * Compares Employees according to name property
+ */
+- (NSComparisonResult)compare:(Employee *)employee;
 
 @end

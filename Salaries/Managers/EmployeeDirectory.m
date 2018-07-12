@@ -56,4 +56,25 @@ NSString* const kEmployeeDirectoryDidUpdateNotification =
      postNotificationName:kEmployeeDirectoryDidUpdateNotification object:self];
 }
 
+- (void)sortEmployeesByNameWithHandlerBlock:(void(^)(void))block {
+    
+    if (_isSorting) {
+        return;
+    }
+    
+    _isSorting = YES;
+    
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+        // async thread
+        self->_employees = [self->_employees sortedArrayUsingComparator:^(Employee *employe1, Employee *employee2) {
+            return [employe1 compare:employee2];
+        }];
+        dispatch_async(dispatch_get_main_queue(), ^(void){
+            //Main thread
+            self->_isSorting = NO;
+            block();
+        });
+    });
+}
+
 @end

@@ -15,7 +15,10 @@ extern NSString* const kEmployeeDirectoryDidUpdateNotification;
 
 @property (readonly) NSArray* employees; // returns NSArray of Employee
 @property (readonly) BOOL isUpdating;
+@property (readonly) BOOL isSorting;
 
 - (void)update;
+
+- (void)sortEmployeesByNameWithHandlerBlock:(void(^)(void))block;
 
 @end
